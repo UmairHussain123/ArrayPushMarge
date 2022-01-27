@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test Drive</title>
+</head>
+
+<body>
+    <script>
+        const countries = [
+            { countryID: 1, country: "Pakistan" },
+            { countryID: 2, country: "UAE" },
+            { countryID: 3, country: "Qatar" }
+        ]
+
+        const cities = [
+            { countryID: 1, city: "Karachi" },
+            { countryID: 1, city: "Islamabad" },
+            { countryID: 1, city: "Quetta" },
+            { countryID: 2, city: "Dubai" }
+        ]
+
+        const countries_and_cities = []
+
+        countries.forEach((country) => {
+            const matchC = cities.filter((city) => {
+                return city.countryID == country.countryID
+            })
+
+            matchC.forEach((c) => {
+                countries_and_cities.push({ countryID: country.countryID, country: country.country, city: c.city })
+            })
+        })
+
+        console.log(countries_and_cities)
+
+    </script>
+</body>
+
+</html>
